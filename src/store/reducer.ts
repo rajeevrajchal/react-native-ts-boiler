@@ -1,4 +1,8 @@
 import { Reducer, combineReducers } from 'redux';
-const rootReducer: Reducer = combineReducers({});
+import appModalReducer from "../entities/common/AppModal/service/appModalReducer";
+
+const rootReducer: Reducer = combineReducers({
+    appModalReducer
+});
 
 export default rootReducer;

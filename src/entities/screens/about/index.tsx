@@ -1,11 +1,11 @@
 import {StackNavigationProp} from '@react-navigation/stack';
-import React, {ReactElement} from 'react';
+import React from 'react';
 import {Button, Text, View} from 'react-native';
-import {RootStackParamList} from '../../../../App';
 import style from './styles';
+import {StackParamList} from "../../../navigation/navigationInterface";
 
 interface AboutScreenProps {
-    navigation: StackNavigationProp<RootStackParamList, 'Home'>;
+    navigation: StackNavigationProp<StackParamList, 'Home'>;
 }
 
 const About: React.FC<AboutScreenProps> = (props) => {
