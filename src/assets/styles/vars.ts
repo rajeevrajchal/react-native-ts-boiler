@@ -11,5 +11,5 @@ export const fonts = {
   md: 18,
   lg: 28,
   xl: 40,
-  // family: 'Inconsolata',
+  family: 'Inconsolata',
 };

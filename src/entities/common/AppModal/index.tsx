@@ -1,8 +1,11 @@
 import React, {Dispatch} from 'react';
-import {Modal, Text, View} from "react-native";
+import {Modal, SafeAreaView, Text, View} from "react-native";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../../store/interface/storeInterface";
 import {closeModal} from "./service/appModalAction";
+import layout from "../../../assets/styles/layout";
+import AppIconButton from "../AppIconButton";
+import typography from "../../../assets/styles/typography";
 
 interface AppModalInterface {
     children: React.ReactNode
@@ -23,16 +26,20 @@ const AppModal: React.FC<AppModalInterface> = (props) => {
             presentationStyle={'pageSheet'}
             visible={isOpenModal}>
 
-            <View style={{
-                flex:1,
-            }}>
-                <Text onPress={() => dispatch(closeModal())} style={{color: "black"}}> Close Modal </Text>
+            <SafeAreaView style={[layout.flexOne]}>
+                <View style={[layout.containerPadding, layout.displayRow, layout.itemCenter, layout.displayBetween]}>
+                    <AppIconButton
+                        iconName={'close'}
+                        onPressAction={() => dispatch(closeModal())}
+                    />
+                    <Text style={typography.title}>Modal Screen </Text>
+                </View>
                 <View style={{flex:1}}>
                     {
                         children
                     }
                 </View>
-            </View>
+            </SafeAreaView>
 
         </Modal>
     );
